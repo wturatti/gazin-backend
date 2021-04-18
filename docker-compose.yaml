@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  application:
+    build:
+      context: .
+    image: gazin-back
+    container_name: gazin-back
+    volumes:
+      - /home/app
+    ports:
+      - "8000:8000"
+    networks:
+      - gazin-network
+    networks:
+      - gazin-network
+
+networks:
+  gazin-network:
+volumes:
+  data:

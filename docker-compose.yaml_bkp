@@ -1,0 +1,37 @@
+version: "3.3"
+services:
+  application:
+    build:
+      context: .
+    image: gazin-back
+    container_name: gazin-back
+    volumes:
+      - /home/app
+    ports:
+      - "8000:8000"
+    networks:
+      - gazin-network
+    links:
+      - mysql
+    networks:
+      - gazin-network
+    depends_on:
+      - "mysql"
+
+  mysql:
+    container_name: g-mysql
+    image: mysql:5.7
+    networks:
+      - gazin-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=gazinapp
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - 5555:3306
+
+networks:
+  gazin-network:
+volumes:
+  data:
