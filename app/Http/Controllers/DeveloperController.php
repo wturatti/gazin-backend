@@ -16,10 +16,15 @@ class DeveloperController extends Controller
         $this->developer = $developer;
     }
 
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $developers = $this->developer->findAllDevelopers();
+            $params = $request->all();
+
+            if (!$params)
+                $developers = $this->developer->findAllDevelopers();
+            else
+                $developers = $this->developer->findDeveloperByName($params['nome']);
 
             return response()->json($developers, 200);
         } catch (Exception $e) {

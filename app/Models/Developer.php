@@ -17,6 +17,11 @@ class Developer extends Model
         return Developer::all();
     }
 
+    public function findDeveloperByName(string $nome)
+    {
+        return Developer::Where('nome', 'like', '%' . $nome . '%')->get();
+    }
+
     public function findDeveloper($id)
     {
         return Developer::find($id);
@@ -32,7 +37,9 @@ class Developer extends Model
         $developer->hobby = $request['hobby'];
         $developer->datanascimento = $request['datanascimento'];
 
-        return $developer->save();
+        $developer->save();
+
+        return $developer->id;
     }
 
     public function updateDeveloper(int $id, array $request)
