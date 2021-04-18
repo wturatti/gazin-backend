@@ -10,3 +10,7 @@ Para criação da aplicação, basta efetuar um clone deste repositório. Em seg
 Após a execução dos comandos acima, o sistema criará uma imagem docker com a aplicação em execução na porta 8000, ficando assim o acesso as api's:
 
 ### `http://localhost:8000/api`
+
+Para executar os testes unitários, basta executar o comando:
+
+### `npm run test:unit`
