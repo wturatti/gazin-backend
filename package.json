@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "testsunit": "./vendor/bin/phpunit --testsuite Unit Tests"
+        "test:unit": "./vendor/bin/phpunit --testsuite Unit Tests"
     },
     "devDependencies": {
         "axios": "^0.21",
