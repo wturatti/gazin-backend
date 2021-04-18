@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Developer;
 use Exception;
-use App\Http\Requests\StorePostRequestDeveloper;
 
 class DeveloperController extends Controller
 {
